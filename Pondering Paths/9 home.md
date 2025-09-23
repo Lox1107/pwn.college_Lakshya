@@ -18,7 +18,7 @@ pwn.college{00c2Zbj3LsLrQd_s37Hn2f4e5EP.QXzMDO0wCNzEzNzEzW}
 ***
 
 ## What I learned
-I learned that the ~ symbol is short for the current user’s home directory (/home/hacker in this case) and is expanded to an absolute path by the shell. Programs that require an absolute path as an argument can accept paths starting with ~, and the shell will handle the expansion. Also only the leading ~ is expanded(i.e ~/~ corresponds to /home/hacker/~ and not /home/hacker/home/hacker).
+I learned that the ~ symbol is short for the current user’s home directory (/home/hacker in this case) and is expanded to an absolute path by the shell. Programs that require an absolute path as an argument can accept paths starting with ~, and the shell will handle the expansion. Also only the leading ～ is expanded(i.e ～/～ corresponds to /home/hacker/～ and not /home/hacker/home/hacker).
 
 ***
 

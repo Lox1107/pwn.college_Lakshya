@@ -1,28 +1,24 @@
 # home sweet home
-The challenge asks us to run the run program from the /challenge directory using a relative path that explicitly references the current directory to get the flag. Linux does not automatically search the current directory for programs, so we must use ./run to execute the program safely from within /challenge.
+The challenge asks us to run the /challenge/run program and have it write the flag to a file inside our home directory. The program requires an absolute path as an argument, and the path must be three characters or less before expansion. The home directory can be referenced using ~, which expands to /home/hacker.
 
 ***
 
 ## My solve
-**Flag:** `pwn.college{wUfi7WNTlxp42wd5iPTgmWQxhwN.QXxUTN0wCNzEzNzEzW}`
+**Flag:** `pwn.college{00c2Zbj3LsLrQd_s37Hn2f4e5EP.QXzMDO0wCNzEzNzEzW}`
 
-I changed my current working directory to /challenge and first tried to run run, which failed because Linux does not look in the current directory automatically. I then invoked the program using the relative path ./run to get the flag.
+I invoked the /challenge/run program and provided a path inside my home directory as an argument. Using the path ~/f met the requirement for a three-character path before expansion and pointed to an absolute path in my home directory. The program wrote the flag to that file and returned it.
 
 ```
-hacker@paths~implicit-relative-path:~$ cd /challenge
-hacker@paths~implicit-relative-path:/challenge$ run
-bash: run: command not found
-hacker@paths~implicit-relative-path:/challenge$ ./run
-Correct!!!
-./run is a relative path, invoked from the right directory!
-Here is your flag:
-pwn.college{wUfi7WNTlxp42wd5iPTgmWQxhwN.QXxUTN0wCNzEzNzEzW}
+hacker@paths~home-sweet-home:~$ /challenge/run ~/f
+Writing the file to /home/hacker/f!
+... and reading it back to you:
+pwn.college{00c2Zbj3LsLrQd_s37Hn2f4e5EP.QXzMDO0wCNzEzNzEzW}
 ```
 
 ***
 
 ## What I learned
-I learned that Linux does not automatically search the current directory for programs when a "naked" program name is entered to avoid us using a program which may have the same name as a core system utility. To execute a program in the current directory, we must explicitly reference it using ./, i.e. ./run is a relative path that correctly points to the program in the current directory.
+I learned that the ~ symbol is short for the current user’s home directory (/home/hacker in this case) and is expanded to an absolute path by the shell. Programs that require an absolute path as an argument can accept paths starting with ~, and the shell will handle the expansion. Also only the leading ~ is expanded(i.e ~/~ corresponds to /home/hacker/~ and not /home/hacker/home/hacker).
 
 ***
 

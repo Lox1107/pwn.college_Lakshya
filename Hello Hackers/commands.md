@@ -4,7 +4,7 @@ The challenge asks us to invoke the **hello** command on the command line to get
 ***
 
 ## My Solve
-**Flag:** 'pwn.college{sqlG9NohwOb9nyIgz3pxVsBru3a.QX3YjM1wCNzEzNzEzW}'
+**Flag:** `pwn.college{sqlG9NohwOb9nyIgz3pxVsBru3a.QX3YjM1wCNzEzNzEzW}`
 
 When I executed the hello command, the flag was output to the terminal.
 

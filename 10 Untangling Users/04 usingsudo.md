@@ -5,7 +5,7 @@ The challenge gives the hacker(us) user sudo priviliges and asks us to used sudo
 ## My solve
 **Flag:** `pwn.college{c4goIOHnU9miDSeJhPnB8IcL8uY.QX4UDN1wCNzEzNzEzW}`
 
-I used sudo to elevate my priviliges and run the cat command as the root user aand read the /flag file where the flag is stored.
+I used sudo to elevate my priviliges and run the cat command as the root user and read the /flag file where the flag is stored.
 ```
 hacker@users~using-sudo:~$ sudo cat /flag
 pwn.college{c4goIOHnU9miDSeJhPnB8IcL8uY.QX4UDN1wCNzEzNzEzW}

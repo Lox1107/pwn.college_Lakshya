@@ -5,7 +5,7 @@ The challenge asks us to switch to the user *zardus* using the su command and gi
 ## My solve
 **Flag:** `pwn.college{sa0Sl4bkIc1KTTPasn4CctBjunm.QX2UDN1wCNzEzNzEzW}`
 
-i used the echo command to return "PWN" and redirected the output to COLLEGE to get the flag.
+First I used the su command to change user to zardus, the shell then asked me for the user password. I typed in the provided password(dont-hack-me) and became zardus. Being zardus gave me the necessary permissions to run /challenge/run and get the flag.
 ```
 hacker@users~other-users-with-su:~$ su zardus
 Password: 
